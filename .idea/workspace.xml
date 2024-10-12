@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bc145e0-7a9f-4206-82a0-66afc524932e" name="Changes" comment="" />
+    <list default="true" id="6bc145e0-7a9f-4206-82a0-66afc524932e" name="Changes" comment="renamed parse_audio" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,21 +25,21 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Abhinand-J"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Abhinand-J&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Abhinand-J/Dubhacks24.git",
-    "accountId": "d5df7717-9e98-434d-8219-a0ee0f6ff8d1"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Abhinand-J/Dubhacks24.git&quot;,
+    &quot;accountId&quot;: &quot;d5df7717-9e98-434d-8219-a0ee0f6ff8d1&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2nLjXV2Tsnjqn3463Eee2udbdPC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -47,7 +47,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "Python.audio.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -98,11 +100,72 @@
       <option name="project" value="LOCAL" />
       <updated>1728760836555</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="testing">
+      <option name="closed" value="true" />
+      <created>1728761346963</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728761346963</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added retrieve_videos version 1">
+      <option name="closed" value="true" />
+      <created>1728761847280</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728761847280</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added videos_data version 1">
+      <option name="closed" value="true" />
+      <created>1728761942666</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728761942666</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added videos_data version 1">
+      <option name="closed" value="true" />
+      <created>1728770774007</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1728770774007</updated>
+    </task>
+    <task id="LOCAL-00009" summary="started parse_audio&#10;just changed id to 1 in audio.py">
+      <option name="closed" value="true" />
+      <created>1728770820544</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728770820544</updated>
+    </task>
+    <task id="LOCAL-00010" summary="started parse_audio&#10;just changed id to 1 in audio.py">
+      <option name="closed" value="true" />
+      <created>1728770834109</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1728770834109</updated>
+    </task>
+    <task id="LOCAL-00011" summary="renamed parse_audio">
+      <option name="closed" value="true" />
+      <created>1728771469388</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1728771469388</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added audio file, version 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="added audio file, version 1" />
+    <MESSAGE value="testing" />
+    <MESSAGE value="added retrieve_videos version 1" />
+    <MESSAGE value="added videos_data version 1" />
+    <MESSAGE value="started parse_audio&#10;just changed id to 1 in audio.py" />
+    <MESSAGE value="renamed parse_audio" />
+    <option name="LAST_COMMIT_MESSAGE" value="renamed parse_audio" />
   </component>
 </project>
