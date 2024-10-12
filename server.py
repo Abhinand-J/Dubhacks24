@@ -1,8 +1,10 @@
 from flask import Flask
 from flask import request
 from flask import abort
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+cors = CORS(app)
 songs = [{
         "image": "https://ged.com/wp-content/uploads/resized/2023/10/Online-GED-Test-Illustration_Copy_2-3x-768x0-c-default.png",
         "name": "song 1",
@@ -24,6 +26,7 @@ songs = [{
     }]
 
 @app.route("/")
+@cross_origin()
 def hello_world():
     return "<p>Hello, World!</p>"
 
@@ -37,3 +40,9 @@ def fetch_song():
     for song in songs:
         if song.ytid == ytid:
             return song
+        
+@app.route("/sendMusicData", methods=["POST"])
+@cross_origin()
+def print_song():
+    print(request)
+    return "hi"

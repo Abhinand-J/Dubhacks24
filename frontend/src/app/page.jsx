@@ -29,7 +29,7 @@ export default function Home() {
                     <h1 className="font-bold text-2xl">Welcome Back!</h1>
                 </div>
                 <div className="mb-12">
-                    <input type="text" placeholder="Search Song" className="rounded-full p-4"/>
+                    <input type="text" placeholder="Search Song" className="rounded-full p-4 lg:min-w-[32rem]"/>
                 </div>
             </div>
             <div className="flex flex-wrap gap-8">

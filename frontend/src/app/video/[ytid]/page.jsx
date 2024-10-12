@@ -9,9 +9,23 @@ const addAudioElement = (blob) => {
     audio.src = url;
     audio.controls = true;
 
+    submitData(blob);
+
     const target = document.getElementById("audio-recording");
     target.innerHTML = "";
     target.appendChild(audio);
+};
+
+const submitData = async (data) => {
+    let response = await fetch("http://localhost:5000/sendMusicData", {
+        method: "POST",
+        body: JSON.stringify({
+            data: data
+        }),
+        headers: {
+            "Content-type": "application/json",
+        },
+    });
 };
 
 export default function Page({ params }) {
