@@ -54,6 +54,6 @@ def fetchClips(videoId):
 
 
 # recordUser(5, "videoId", "clip1.wav")
-videoid = "NlsHKnGuRg"
+videoid = "1"
 clips = fetchClips(videoid)
 print(clips)
