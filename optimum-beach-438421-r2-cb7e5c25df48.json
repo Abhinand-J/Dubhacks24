@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "optimum-beach-438421-r2",
+  "private_key_id": "cb7e5c25df48fbb8053aaa4a9dea3bb31dfbf647",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC0jBaA1eOncYAo\nKCIefarojvn47P2RmaP2640QV7CpNKZeg1HCNdIEH9GdyqQHsUGJchqsFVkDIW0H\nzn7ZXV48rVqOwtl8xFcBsy2mCpRqcy5vT6LOZPDYG8zVjDwqEJwsx2nPUuM7S8vX\nsVirrBI8JprRQZnhJo9Uy1lvREyonhqrM4YP/qJx+nIFWaDEUCiaxMMdIS22xZaD\n/LU7y7iGNoEttadxd81/G7Nsmt719DRkHFdRG2b5G6N1eyjoCclFDirtT30VVHnA\nODmCwZ4iSgP7ptlq1PxwOPxo0xNu486nKbqJYxs2VIdt5A7zHdSWlFoceRt7lG8N\nD3QppPDBAgMBAAECggEAEPWHt5pfw/65VwxOCCctwqKLgIJiXybba/o8Seiyw3Ia\nno4fQ+riS1jhy7yZI8/WpB5/uuJWdiDRqQYQjEJk87Yk53wOCdY3hgVaqFoeDtG6\n7uHAHTsGFIan+vctP5ZH1Tz2B291wMAh6aTS+20yWUwXBsjut2Nz2zcus3Dq8nue\njHlpMk4V5B2/otWo/uETob5ZgNLbNU4B368XG0kFWwxakyD6z2OBhr89ctyDco9Y\n/NvkhlPGWZj4kigFSzdVsu9YnX3lm/CjRNZOcqIz+Lcqx/A3wKfVf3ltL0ib84rG\ngr4JJ6NwSoJMX8qqR09D6kES7EQ2Dih1x/kRv/2d8QKBgQD7Ni0EoQa0Jxvuh0By\ne9iAFj3KYLBIIyLd1a5ERjqKeH9puUFDr6bWsQlJrSY6HJ8deJ9EtqrA7OIZu0N5\nh0BqBUhWZKcGGgoajnZg5p2xjPBsYvZ05/Smfkes/b4RE+2gbBXWH8UEIFIX5Uh3\ngOkGgJg71zTEQ9C5lRZKwlpuwwKBgQC3/Rg8FKy8dvb551a7+90wTTgoLYnYwv4T\nxA6dxdJb9gYJVl2FLS0+51LyD40ACvPMY+Imo2j3/0dBEoU5JAu0UlwOODXkhkJB\nBnFdz4NLxp96BlmTN4pp71Nsqjej3ezySNyBNAfi8KQqlMpp8+N/AqXnfQcHxjb8\neoQm3UDyKwKBgQDGXUMzEowemXs+4OINBKoyil2EftD0RXp0vRR8qQ/0462IqFZW\nwk713Jm+6dDztkIWnXb2ZV90NBldxDdFsX01urIiNhyFfu5XhgMIBVKkLuxySbrf\nGYJgLfsfKMZ66ceME40ypaeG2Ja6c7zDULGxBr4vEoKCMCKTSJxvsASEzQKBgQCJ\nA+UZUPg2PY29GwdfZLgasVbBrO/7yXJ2+8k6u0fljfh+2Z85fyQztQbzFpuVTZKz\nQir3RTf1f1jr38PwgqRou/Cr8jZIIaeTTx37k36eXqMCt1nbpT/hlgWVZcmbsbgz\n0gjL+xhoa3aF81otvx9KxYkRM+2ZX4YxTXe+jYRBEwKBgQDI1qKkyUIpMg3jsKEZ\nLfCPXHIdlF6osX2xJcpPwRFx4GeL0is8xnCjTQrrf/hjkocWaVqgXH89tQEfOm4y\nI1/cOA0Rn//LWqYN1oSVnnLyFYx98x2+mZLl9ZCacO6tATJHgt6FHV5ET9pFgF21\ndB70vq8qrlCTZ2wMEwlMb0Aa8A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "dubhacks@optimum-beach-438421-r2.iam.gserviceaccount.com",
+  "client_id": "109791103879744168076",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dubhacks%40optimum-beach-438421-r2.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
