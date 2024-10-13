@@ -2,28 +2,23 @@ from flask import Flask
 from flask import request
 from flask import abort
 from flask_cors import CORS, cross_origin
+import os
+from retrieve_videos import get_video
 
 app = Flask(__name__)
 cors = CORS(app)
-songs = [{
-        "image": "https://ged.com/wp-content/uploads/resized/2023/10/Online-GED-Test-Illustration_Copy_2-3x-768x0-c-default.png",
-        "name": "song 1",
-        "duration": "3:45",
-        "artist": "bald nerd",
-        "ytid": "paqcdLiBvsw",
-    },{
-        "image": "https://ged.com/wp-content/uploads/resized/2023/10/Online-GED-Test-Illustration_Copy_2-3x-768x0-c-default.png",
-        "name": "song 1",
-        "duration": "3:45",
-        "artist": "bald nerd",
-        "ytid": "ZqY3eONjX54",
-    },{
-        "image": "https://ged.com/wp-content/uploads/resized/2023/10/Online-GED-Test-Illustration_Copy_2-3x-768x0-c-default.png",
-        "name": "song 1",
-        "duration": "3:45",
-        "artist": "bald nerd",
-        "ytid": "ZqY3eONjX5f",
-    }]
+
+
+songs = []
+
+script_dir = os.path.dirname(__file__)
+rel_path = "videos"
+directory_path = os.path.join(script_dir, rel_path)
+
+for file in os.listdir(directory_path):
+    if file.endswith(".txt"):
+        songs.append(get_video(os.path.join(directory_path, file)))
+
 
 @app.route("/")
 @cross_origin()
