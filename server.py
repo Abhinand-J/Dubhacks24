@@ -7,16 +7,16 @@ app = Flask(__name__)
 cors = CORS(app)
 songs = [{
         "image": "https://ged.com/wp-content/uploads/resized/2023/10/Online-GED-Test-Illustration_Copy_2-3x-768x0-c-default.png",
-        "name": "song 1",
-        "duration": "3:45",
-        "artist": "bald nerd",
-        "ytid": "paqcdLiBvsw",
+        "name": "Into the Unknown",
+        "duration": "3:30",
+        "artist": "Idina Menzel",
+        "ytid": "gIOyB9ZXn8s",
     },{
         "image": "https://ged.com/wp-content/uploads/resized/2023/10/Online-GED-Test-Illustration_Copy_2-3x-768x0-c-default.png",
-        "name": "song 1",
-        "duration": "3:45",
-        "artist": "bald nerd",
-        "ytid": "ZqY3eONjX54",
+        "name": "Love Story",
+        "duration": "3:56",
+        "artist": "Taylor Swift",
+        "ytid": "8xg3vE8Ie_E",
     },{
         "image": "https://ged.com/wp-content/uploads/resized/2023/10/Online-GED-Test-Illustration_Copy_2-3x-768x0-c-default.png",
         "name": "song 1",
