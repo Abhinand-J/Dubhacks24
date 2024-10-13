@@ -60,8 +60,7 @@ def speechToText(file_path, language):
     audio = speech.RecognitionAudio(content=content)
     config = speech.RecognitionConfig(
         encoding=speech.RecognitionConfig.AudioEncoding.ENCODING_UNSPECIFIED,
-        language_code=language,
-        sample_rate_hertz=44100
+        language_code=language
     )
     response = client.recognize(config=config, audio=audio)
 

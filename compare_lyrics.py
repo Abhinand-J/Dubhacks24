@@ -1,7 +1,7 @@
 # Returns a boolean array of the indices you need to change in s1 in order to reach s2. 
 def edit_dist_dp(s1, s2):
     if (s2 == ""):
-        allFail = [False] * (len(s1))
+        allFail = [True] * (len(s1))
         return allFail, len(s1)
     m = len(s1)
     n = len(s2)
@@ -41,6 +41,9 @@ def edit_dist_dp(s1, s2):
                 indices[i - 1] = True
                 i -= 1
                 j -= 1
+    while i >= 1:
+        indices[i] = True
+        i -= 1
     if s1[0] != s2[0]:
         indices[0] = True
     if indices[m] == True:

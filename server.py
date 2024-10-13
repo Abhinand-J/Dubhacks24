@@ -3,8 +3,10 @@ from flask import request
 from flask import abort
 from flask_cors import CORS
 import os
+from grader import grader
 from retrieve_videos import get_video
 import json
+from pydub import AudioSegment
 
 app = Flask(__name__)
 CORS(app)
@@ -41,8 +43,14 @@ def fetch_song():
 @app.route("/submitMusicData", methods=["POST"])
 def print_song():
     files = request.files
+    clip_id = request.form["clip_id"]
     file_storage = files.get('file')
-    file_storage.save("mp3/temp.webm")
-    
-    return "hi"
+    file_storage.save(f"mp3/{clip_id}.webm")
+
+    audio = AudioSegment.from_file(f"mp3/{clip_id}.webm")
+    audio.export(f"mp3/{clip_id}.wav", format="wav")
+
+    graded_score = grader(clip_id)
+
+    return json.dumps(graded_score)
 
