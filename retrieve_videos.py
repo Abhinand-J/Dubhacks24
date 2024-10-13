@@ -1,5 +1,5 @@
 # retrieve_videos.py
-
+import json
 from videos_data import videos  # Import video data from videos_data.py
 
 # Function to retrieve all videos
@@ -16,24 +16,35 @@ def get_video_by_id(video_id):
 #lyrics=[[lyrics for clip1] [lyrics for clip2]]
 #time-stamps = [[clip1start, clip1end], [clip2start, clip2end]]
 def get_video(file_path):
-    curVideo = {}
+    data = []
+    clip_id = 0
     with open(file_path, "r") as f:
         lines = f.readlines()
-        curVideo["name"] = lines[0].strip()
-        curVideo["artist"] = lines[1].strip()
-        curVideo["ytid"] = lines[2].strip()
-        curVideo["time-stamps"] = []
-        curVideo["lyrics"] = []
+        name = lines[0].strip()
+        artist = lines[1].strip()
+        ytid = lines[2].strip()
         curLine = 3
         while(curLine < len(lines)):
             numLine = int(lines[curLine].strip())
-            curLyrics = []
+            curClip = {}
+            curClip["song_name"] = name
+            curClip["artist"] = artist
+            curClip["yt_id"] = ytid
+            curClip["lyrics"] = ""
+            curClip["clip_id"] = ytid + "_" + str(clip_id)
+            clip_id += 1
             for i in range(numLine):
                 curLine+=1
-                curLyrics.append(lines[curLine].strip())
-            curVideo["lyrics"].append(curLyrics)
+                curClip["lyrics"] += (lines[curLine].strip())
+                curClip["lyrics"] += " "
             curLine += 1
             start, end = lines[curLine].strip().split(" ")
-            curVideo["time-stamps"].append([int(start), int(end)])
+            curClip["start"] = start
+            curClip["end"] = end
             curLine += 1
-    return curVideo
+            data.append(curClip)
+    return data
+
+with open("data.json", "w") as f:
+    data = get_video("videos/love-story.txt")
+    json.dump(data, f)
