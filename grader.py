@@ -33,6 +33,6 @@ def grader(clipID, lang="en-US"):
         # print(obj.alternatives[0].transcript)
         tot_lyrics += obj.alternatives[0].transcript + " "
     # print(tot_lyrics)
-    incorrectChars, invertScore = edit_dist_dp(songLyrics, tot_lyrics)
+    incorrectChars, invertScore = edit_dist_dp(songLyrics.lower().strip(), tot_lyrics.lower().strip())
     score = 1 - invertScore/(len(songLyrics) + len(tot_lyrics))
     return songLyrics, tot_lyrics, incorrectChars, score

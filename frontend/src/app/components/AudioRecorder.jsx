@@ -38,14 +38,14 @@ export default function Audio(props) {
         });
 
         const jaysone = await response.json();
-        const og_set = createWordSet(jaysone[0])
-        const new_set = createWordSet(jaysone[1])
+        const og_set = createWordSet(jaysone[0].toLowerCase())
+        const new_set = createWordSet(jaysone[1].toLowerCase())
         
         const difference = [...og_set].filter(word => !new_set.has(word));
-
+        console.log(difference.size)
         setYou(jaysone[1])
         setGrade(jaysone[3])
-        setWordsToPractice(difference)
+        setWordsToPractice(new Set(difference))
 
         
     };
@@ -70,7 +70,7 @@ export default function Audio(props) {
             <div>
                 <p>{you != "" ? `We Heard: ${you}` : ""}</p>
                 <p>{you != "" ? `Grade: ${Math.round(grade * 100)}%` : ""}</p>
-                <p>{you != "" ? "Words to Practice: "+ Array.from(wordsToPractice).join(", ") : ""}</p>
+                <p>{wordsToPractice.size != 0 ? "Words to Practice: "+ Array.from(wordsToPractice).join(", ") : ""}</p>
             </div>
         </div>
     );
