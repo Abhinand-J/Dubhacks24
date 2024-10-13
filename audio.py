@@ -12,7 +12,6 @@ def recordUser(RECORD_SECONDS, folder_path, file_name):
     FORMAT = pyaudio.paInt16
     CHANNELS = 1
     RATE = 44100
-    RECORD_SECONDS = 5
 
     path = os.path.join(folder_path, file_name)
 
@@ -52,14 +51,14 @@ def fetchClips(videoId):
             clips.append([start, end])
     return clips
 
-def speechToText(file_path):
+def speechToText(file_path, language):
     client = speech.SpeechClient()
     with open(file_path, "rb") as audio_file:
         content = audio_file.read()
     audio = speech.RecognitionAudio(content=content)
     config = speech.RecognitionConfig(
         encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
-        language_code="en-US",
+        language_code=language,
         sample_rate_hertz=44100
     )
     response = client.recognize(config=config, audio=audio)
