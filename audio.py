@@ -8,7 +8,7 @@ from google.cloud import speech
 import pyphen
 from pydub import AudioSegment
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "optimum-beach-438421-r2-cb7e5c25df48.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "optimum-beach-438421-r2-0439c4342572.json"
 def recordUser(RECORD_SECONDS, folder_path, file_name):
     CHUNK = 1024
     FORMAT = pyaudio.paInt16
