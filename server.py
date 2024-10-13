@@ -1,13 +1,13 @@
 from flask import Flask
 from flask import request
 from flask import abort
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 import os
 from retrieve_videos import get_video
 import json
 
 app = Flask(__name__)
-cors = CORS(app)
+CORS(app)
 
 with open("data.json", "r") as file:
     songs = json.load(file)
@@ -21,8 +21,7 @@ with open("data.json", "r") as file:
 #         songs.append(get_video(os.path.join(directory_path, file)))
 
 
-@app.route("/")
-@cross_origin()
+@app.route("/data")
 def hello_world():
     return songs
 
@@ -39,9 +38,11 @@ def fetch_song():
     
     abort(403)
 
-@app.route("/sendMusicData", methods=["POST"])
-@cross_origin()
+@app.route("/submitMusicData", methods=["POST"])
 def print_song():
-    print(request.json)
+    files = request.files
+    file_storage = files.get('file')
+    file_storage.save("mp3/temp.webm")
+    
     return "hi"
 

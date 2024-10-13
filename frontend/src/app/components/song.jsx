@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function SongPanel({ image, name, duration, artist, clip_id }) {
     return (
         <div className="flex flex-col max-w-[300px]">
-            <Link href={`/video/${ytid}`}>
+            <Link href={`/video/${clip_id}`}>
                 <Image
                     src={image}
                     className="duration-300 rounded-2xl hover:rounded-none"
@@ -13,10 +13,12 @@ export default function SongPanel({ image, name, duration, artist, clip_id }) {
                 />
                 <div>
                     <div className="flex justify-between w-full my-1">
-                        <p className="font-bold">{name}</p>
-                        <p>{duration}</p>
-                    </div>
-                    <div>
+                        <p className="font-bold">
+                            {name + " "
+                                +clip_id.split("_")[
+                                    clip_id.split("_").length - 1
+                                ]}
+                        </p>
                         <p>{artist}</p>
                     </div>
                 </div>
