@@ -40,6 +40,6 @@ def edit_dist_dp(s1, s2):
                 j -= 1
     if s1[0] != s2[0]:
         indices[0] = True
-    indices[m - 1] = indices[m];
+    indices[m - 1] = indices[m]
     indices.pop()
     return indices
