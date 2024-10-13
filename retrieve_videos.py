@@ -20,18 +20,21 @@ def get_video(file_path):
     clip_id = 0
     with open(file_path, "r") as f:
         lines = f.readlines()
-        name = lines[0].strip()
-        artist = lines[1].strip()
-        ytid = lines[2].strip()
-        curLine = 3
+        name = lines[1].strip()
+        artist = lines[2].strip()
+        ytid = lines[3].strip()
+        language = lines[0].strip()
+        curLine = 4
         while(curLine < len(lines)):
             numLine = int(lines[curLine].strip())
             curClip = {}
+            curClip
             curClip["song_name"] = name
             curClip["artist"] = artist
             curClip["yt_id"] = ytid
             curClip["lyrics"] = ""
             curClip["clip_id"] = ytid + "_" + str(clip_id)
+            curClip["language"] = language
             clip_id += 1
             for i in range(numLine):
                 curLine+=1
