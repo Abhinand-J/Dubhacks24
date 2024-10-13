@@ -31,10 +31,10 @@ const submitData = async (data) => {
 export default function Page({ params }) {
     const router = useRouter();
     return (
-        <div className="flex flex-col justify-center align-middle max-w-full gap-6">
+        <div className="flex flex-col justify-center max-w-full gap-6 align-middle">
             <iframe
-                className="m-auto w-full aspect-video"
-                src={`https://www.youtube.com/embed/${params.ytid}`}
+                className="w-full m-auto aspect-video"
+                src={`https://www.youtube.com/embed/${params.yt_id}`}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
             <div className="m-auto">
