@@ -1,3 +1,4 @@
+import datetime
 import wave
 import sys
 import os
@@ -5,6 +6,7 @@ import pyaudio
 import time
 from google.cloud import speech
 import pyphen
+from pydub import AudioSegment
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "optimum-beach-438421-r2-cb7e5c25df48.json"
 def recordUser(RECORD_SECONDS, folder_path, file_name):
@@ -12,7 +14,6 @@ def recordUser(RECORD_SECONDS, folder_path, file_name):
     FORMAT = pyaudio.paInt16
     CHANNELS = 1
     RATE = 44100
-    RECORD_SECONDS = 5
 
     path = os.path.join(folder_path, file_name)
 
@@ -45,25 +46,46 @@ def recordUser(RECORD_SECONDS, folder_path, file_name):
 #fetch all clips from a video and return in list [start, end]
 def fetchClips(videoId):
     clips = []
-    path = os.path.join(videoId, "clips.txt")
+    path = os.path.join(videoId, "clips.txt") # Needs to be fixed
     with open(path, 'r') as file:
         for line in file:
             start, end = line.strip().split(" ")
             clips.append([start, end])
     return clips
 
-def speechToText(file_path):
+def speechToText(file_path, language):
     client = speech.SpeechClient()
     with open(file_path, "rb") as audio_file:
         content = audio_file.read()
     audio = speech.RecognitionAudio(content=content)
     config = speech.RecognitionConfig(
-        encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
-        language_code="en-US",
+        encoding=speech.RecognitionConfig.AudioEncoding.ENCODING_UNSPECIFIED,
+        language_code=language,
         sample_rate_hertz=44100
     )
     response = client.recognize(config=config, audio=audio)
-    ret = []
-    for result in response.results:
-        ret.append(result.alternatives[0].transcript)
-    return ret
+
+    return response.results
+
+def parse_long_mp3(file_path):
+    sound = AudioSegment.from_mp3(file_path)
+    length_in_seconds = sound.duration_seconds
+    split_count = int(length_in_seconds // 58 + 1)
+    split_audio_filepaths = []
+    total_lyrics = []
+
+    if not os.path.exists(file_path[:-4]):
+        os.makedirs(file_path[:-4])
+
+    for i in range(split_count):
+        sound[i * len(sound) // split_count:min((i + 1) * len(sound) // split_count, len(sound))].export(f"{file_path[:-4]}/{i}.mp3", format="mp3")
+        split_audio_filepaths.append(f"{file_path[:-4]}/{i}.mp3")
+    
+    for i, filepath in enumerate(split_audio_filepaths):
+        lyrics = speechToText(filepath)
+
+        for j in range(len(lyrics)):
+            lyrics[j].result_end_time += datetime.timedelta(seconds=i * 58)
+        total_lyrics += lyrics
+
+    return total_lyrics

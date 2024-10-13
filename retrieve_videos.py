@@ -1,14 +1,39 @@
 # retrieve_videos.py
+import json
 
-from videos_data import videos  # Import video data from videos_data.py
+def get_video(file_path):
+    data = []
+    clip_id = 0
+    with open(file_path, "r") as f:
+        lines = f.readlines()
+        name = lines[1].strip()
+        artist = lines[2].strip()
+        ytid = lines[3].strip()
+        language = lines[0].strip()
+        curLine = 4
+        while(curLine < len(lines)):
+            numLine = int(lines[curLine].strip())
+            curClip = {}
+            curClip
+            curClip["song_name"] = name
+            curClip["artist"] = artist
+            curClip["yt_id"] = ytid
+            curClip["lyrics"] = ""
+            curClip["clip_id"] = ytid + "_" + str(clip_id)
+            curClip["language"] = language
+            clip_id += 1
+            for i in range(numLine):
+                curLine+=1
+                curClip["lyrics"] += (lines[curLine].strip())
+                curClip["lyrics"] += " "
+            curLine += 1
+            start, end = lines[curLine].strip().split(" ")
+            curClip["start"] = int(start)
+            curClip["end"] = int(end)
+            curLine += 1
+            data.append(curClip)
+    return data
 
-# Function to retrieve all videos
-def get_all_videos():
-    return videos
-
-# Function to retrieve a video by its ID
-def get_video_by_id(video_id):
-    for video in videos:
-        if video['id'] == video_id:
-            return video
-    return None  # Return None if no video with the given ID is found
+with open("data.json", "w") as f:
+    data = get_video("videos/love-story.txt")
+    json.dump(data, f)
