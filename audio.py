@@ -45,7 +45,7 @@ def recordUser(RECORD_SECONDS, folder_path, file_name):
 #fetch all clips from a video and return in list [start, end]
 def fetchClips(videoId):
     clips = []
-    path = os.path.join(videoId, "clips.txt")
+    path = os.path.join(videoId, "clips.txt") # Needs to be fixed
     with open(path, 'r') as file:
         for line in file:
             start, end = line.strip().split(" ")
