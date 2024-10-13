@@ -1,20 +1,6 @@
 # retrieve_videos.py
 import json
-from videos_data import videos  # Import video data from videos_data.py
 
-# Function to retrieve all videos
-def get_all_videos():
-    return videos
-
-# Function to retrieve a video by its ID
-def get_video_by_id(video_id):
-    for video in videos:
-        if video['id'] == video_id:
-            return video
-    return None  # Return None if no video with the given ID is found
-#name, artist, ytid
-#lyrics=[[lyrics for clip1] [lyrics for clip2]]
-#time-stamps = [[clip1start, clip1end], [clip2start, clip2end]]
 def get_video(file_path):
     data = []
     clip_id = 0
