@@ -28,8 +28,8 @@ def get_video(file_path):
                 curClip["lyrics"] += " "
             curLine += 1
             start, end = lines[curLine].strip().split(" ")
-            curClip["start"] = start
-            curClip["end"] = end
+            curClip["start"] = int(start)
+            curClip["end"] = int(end)
             curLine += 1
             data.append(curClip)
     return data
