@@ -22,15 +22,13 @@ def grader(clipID, lang):
     file_path = "data.json"
     with open(file_path, 'r') as file:
         data = json.load(file)
-    print(data)
 
+    songLyrics = ""
     for clip in data:
         if clip['clip_id'] == clipID:
             songLyrics = clip['lyrics']
-            break
-        else:
-            raise Exception("invalid ClipID")
-        
+    if(songLyrics==""):
+        raise Exception("bruh")
     incorrectChars, invertScore = edit_dist_dp(songLyrics, userLyrics)
 
 
