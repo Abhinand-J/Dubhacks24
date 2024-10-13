@@ -1,2 +1,4 @@
 key.json
 venv/*
+__pycache__/*
+__pycache__/server.cpython-312.pyc
